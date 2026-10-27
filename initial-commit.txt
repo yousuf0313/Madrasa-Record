@@ -1,0 +1,1 @@
+Madrasa Record - student records and attendance app. Initial commit to enable the v1.0.0 release.
