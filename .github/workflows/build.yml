@@ -26,7 +26,7 @@ jobs:
         run: |
           unzip -o madrasa-project.zip -d .
           test -f gradle/wrapper/gradle-wrapper.jar
-          test -f app/src/main/assets/fonts/NotoNastaliqUrdu.ttf
+          test -f app/src/main/assets/fonts/JameelNooriNastaleeq.ttf
           ls app/src/main/assets/fonts | wc -l
 
       - name: Build Release APK (unsigned)
@@ -59,9 +59,9 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          cp app/build/outputs/apk/release/app-release-unsigned.apk Digital-Asan-Hazri-Register-v1.0.11-unsigned.apk
-          gh release create "v1.0.11-ci" --prerelease \
-            --title "CI build v1.0.11 (unsigned — do not install)" \
+          cp app/build/outputs/apk/release/app-release-unsigned.apk Digital-Asan-Hazri-Register-v1.1.0-unsigned.apk
+          gh release create "v1.1.0-ci" --prerelease \
+            --title "CI build v1.1.0 (unsigned — do not install)" \
             --notes "Unsigned CI build of the Gradle migration. This APK is signed locally with the project keystore before delivery; do not install this file." \
-            Digital-Asan-Hazri-Register-v1.0.11-unsigned.apk \
-          || gh release upload "v1.0.11-ci" Digital-Asan-Hazri-Register-v1.0.11-unsigned.apk --clobber
+            Digital-Asan-Hazri-Register-v1.1.0-unsigned.apk \
+          || gh release upload "v1.1.0-ci" Digital-Asan-Hazri-Register-v1.1.0-unsigned.apk --clobber
